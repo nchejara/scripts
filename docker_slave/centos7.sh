@@ -3,7 +3,7 @@
 ## Installation Reference: https://docs.docker.com/engine/install/centos/
 
 # Install JDK
-yum install -y java-1.8.0-openjdk
+yum install -y java-1.8.0-openjdk git
 
 # Uninstall Old Versions
 yum remove -y docker \
@@ -18,6 +18,9 @@ yum remove -y docker \
 # Set up Repository
 yum install -y yum-utils
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+# Instal Docker 
+yum install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
 # Install Docker Compose
 curl -L  "https://github.com/docker/compose/releases/download/v2.6.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/bin/docker-compose
